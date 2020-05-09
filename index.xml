@@ -1,13 +1,464 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo Site</title>
-    <link>https://lizcao.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>en</language>
     <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Fri, 08 May 2020 20:32:34 +0800</lastBuildDate>
     
-        <atom:link href="https://lizcao.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>My First Post2</title>
+        <link>http://localhost:1313/posts/my-first-post2.html</link>
+        <pubDate>Fri, 08 May 2020 20:32:34 +0800</pubDate>
+        
+        <guid>http://localhost:1313/posts/my-first-post2.html</guid>
+        <description>Hugo Site http://localhost:1313/posts/my-first-post2.html -- http://localhost:1313/posts/my-first-post2.html - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>My First Post</title>
+        <link>http://localhost:1313/posts/my-first-post.html</link>
+        <pubDate>Fri, 08 May 2020 17:38:50 +0800</pubDate>
+        
+        <guid>http://localhost:1313/posts/my-first-post.html</guid>
+        <description>Hugo Site http://localhost:1313/posts/my-first-post.html -- http://localhost:1313/posts/my-first-post.html - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>sampleREADME.md</title>
+        <link>http://localhost:1313/posts/demo.html</link>
+        <pubDate>Fri, 08 May 2020 17:38:50 +0800</pubDate>
+        
+        <guid>http://localhost:1313/posts/demo.html</guid>
+        <description>Hugo Site http://localhost:1313/posts/demo.html -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;INSERT GRAPHIC HERE (include hyperlink in image)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;repository-title-goes-here&#34;&gt;Repository Title Goes Here&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Subtitle or Short Description Goes Here&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ideally one sentence&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;include terms/tags that can be searched&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Badges will go here&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;build status&lt;/li&gt;
+&lt;li&gt;issues (waffle.io maybe)&lt;/li&gt;
+&lt;li&gt;devDependencies&lt;/li&gt;
+&lt;li&gt;npm package&lt;/li&gt;
+&lt;li&gt;coverage&lt;/li&gt;
+&lt;li&gt;slack&lt;/li&gt;
+&lt;li&gt;downloads&lt;/li&gt;
+&lt;li&gt;gitter chat&lt;/li&gt;
+&lt;li&gt;license&lt;/li&gt;
+&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://travis-ci.org/badges/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square&#34; alt=&#34;Build Status&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://gemnasium.com/badges/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square&#34; alt=&#34;Dependency Status&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://coveralls.io/r/badges/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square&#34; alt=&#34;Coverage Status&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://codeclimate.com/github/badges/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square&#34; alt=&#34;Code Climate&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://github.com/badges/badgerbadgerbadger/issues&#34;&gt;&lt;img src=&#34;http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square&#34; alt=&#34;Github Issues&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://github.com/badges/badgerbadgerbadger/pulls&#34;&gt;&lt;img src=&#34;http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square&#34; alt=&#34;Pending Pull-Requests&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://rubygems.org/gems/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square&#34; alt=&#34;Gem Version&#34;&gt;&lt;/a&gt; &lt;a href=&#34;http://badges.mit-license.org&#34;&gt;&lt;img src=&#34;http://img.shields.io/:license-mit-blue.svg?style=flat-square&#34; alt=&#34;License&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://github.com/badges/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square&#34; alt=&#34;Badges&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For more on these wonderful &lt;del&gt;badgers&lt;/del&gt; badges, refer to &lt;!-- raw HTML omitted --&gt;&lt;code&gt;badgerbadgerbadger&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;INSERT ANOTHER GRAPHIC HERE&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;&#34;&gt;&lt;img src=&#34;http://i.imgur.com/dt8AUb6.png&#34; alt=&#34;INSERT YOUR GRAPHIC HERE&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Most people will glance at your &lt;code&gt;README&lt;/code&gt;, &lt;em&gt;maybe&lt;/em&gt; star it, and leave&lt;/li&gt;
+&lt;li&gt;Ergo, people should understand instantly what your project is about based on your repo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tips&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;HAVE WHITE SPACE&lt;/li&gt;
+&lt;li&gt;MAKE IT PRETTY&lt;/li&gt;
+&lt;li&gt;GIFS ARE REALLY COOL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GIF Tools&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;!-- raw HTML omitted --&gt;&lt;strong&gt;Recordit&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt; to create quicks screencasts of your desktop and export them as &lt;code&gt;GIF&lt;/code&gt;s.&lt;/li&gt;
+&lt;li&gt;For terminal sessions, there&amp;rsquo;s &lt;!-- raw HTML omitted --&gt;&lt;strong&gt;ttystudio&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt; which also supports exporting &lt;code&gt;GIF&lt;/code&gt;s.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Recordit&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://g.recordit.co/iLN6A0vSD8.gif&#34; alt=&#34;Recordit GIF&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ttystudio&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/chjj/ttystudio/master/img/example.gif&#34; alt=&#34;ttystudio GIF&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;table-of-contents-optional&#34;&gt;Table of Contents (Optional)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If your &lt;code&gt;README&lt;/code&gt; has a lot of info, section headers might be nice.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#installation&#34;&gt;Installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#features&#34;&gt;Features&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#contributing&#34;&gt;Contributing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#team&#34;&gt;Team&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#support&#34;&gt;Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#license&#34;&gt;License&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;example-optional&#34;&gt;Example (Optional)&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// code away!
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;generateProject&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;project&lt;/span&gt; =&amp;gt; {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;code&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [];
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;js&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;js&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;project&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;js&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;code&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;js&lt;/span&gt;);
+  }
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;All the &lt;code&gt;code&lt;/code&gt; required to get started&lt;/li&gt;
+&lt;li&gt;Images of what it should look like&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;clone&#34;&gt;Clone&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Clone this repo to your local machine using &lt;code&gt;https://github.com/fvcproductions/SOMEREPO&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;If you want more syntax highlighting, format your code like this:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;update and install this package first&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ brew update
+$ brew install fvcproductions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;now install npm and bower packages&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ npm install
+$ bower install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;For all the possible languages that support syntax highlithing on GitHub (which is basically all of them), refer &lt;!-- raw HTML omitted --&gt;here&lt;!-- raw HTML omitted --&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;h2 id=&#34;usage-optional&#34;&gt;Usage (Optional)&lt;/h2&gt;
+&lt;h2 id=&#34;documentation-optional&#34;&gt;Documentation (Optional)&lt;/h2&gt;
+&lt;h2 id=&#34;tests-optional&#34;&gt;Tests (Optional)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Going into more detail on code and technologies used&lt;/li&gt;
+&lt;li&gt;I utilized this nifty &lt;!-- raw HTML omitted --&gt;Markdown Cheatsheet&lt;!-- raw HTML omitted --&gt; for this sample &lt;code&gt;README&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;contributing&#34;&gt;Contributing&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To get started&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;step-1&#34;&gt;Step 1&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Option 1&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🍴 Fork this repo!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Option 2&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;👯 Clone this repo to your local machine using &lt;code&gt;https://github.com/joanaz/HireDot2.git&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;step-2&#34;&gt;Step 2&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HACK AWAY!&lt;/strong&gt; 🔨🔨🔨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;step-3&#34;&gt;Step 3&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔃 Create a new pull request using &lt;!-- raw HTML omitted --&gt;&lt;code&gt;https://github.com/joanaz/HireDot2/compare/&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;team&#34;&gt;Team&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Or Contributors/People&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;FVCproductions&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;FVCproductions&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;FVCproductions&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://fvcproductions.com&#34;&gt;&lt;img src=&#34;https://avatars1.githubusercontent.com/u/4284691?v=3&amp;amp;s=200&#34; alt=&#34;FVCproductions&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://fvcproductions.com&#34;&gt;&lt;img src=&#34;https://avatars1.githubusercontent.com/u/4284691?v=3&amp;amp;s=200&#34; alt=&#34;FVCproductions&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://fvcproductions.com&#34;&gt;&lt;img src=&#34;https://avatars1.githubusercontent.com/u/4284691?v=3&amp;amp;s=200&#34; alt=&#34;FVCproductions&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;code&gt;github.com/fvcproductions&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;code&gt;github.com/fvcproductions&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;code&gt;github.com/fvcproductions&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;You can just grab their GitHub profile image URL&lt;/li&gt;
+&lt;li&gt;You should probably resize their picture using &lt;code&gt;?s=200&lt;/code&gt; at the end of the image URL.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;How do I do &lt;em&gt;specifically&lt;/em&gt; so and so?&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;No problem! Just do this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;support&#34;&gt;Support&lt;/h2&gt;
+&lt;p&gt;Reach out to me at one of the following places&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Website at &lt;!-- raw HTML omitted --&gt;&lt;code&gt;fvcproductions.com&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;li&gt;Twitter at &lt;!-- raw HTML omitted --&gt;&lt;code&gt;@fvcproductions&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;li&gt;Insert more social links here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;donations-optional&#34;&gt;Donations (Optional)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You could include a &lt;!-- raw HTML omitted --&gt;Gratipay&lt;!-- raw HTML omitted --&gt; link as well.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://gratipay.com/fvcproductions/&#34;&gt;&lt;img src=&#34;https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png&#34; alt=&#34;Support via Gratipay&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://badges.mit-license.org&#34;&gt;&lt;img src=&#34;http://img.shields.io/:license-mit-blue.svg?style=flat-square&#34; alt=&#34;License&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;http://opensource.org/licenses/mit-license.php&#34;&gt;MIT license&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Copyright 2015 © &lt;!-- raw HTML omitted --&gt;FVCproductions&lt;!-- raw HTML omitted --&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+- http://localhost:1313/posts/demo.html - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>sampleREADME.md</title>
+        <link>http://localhost:1313/posts/demo2.html</link>
+        <pubDate>Fri, 08 May 2020 17:38:50 +0800</pubDate>
+        
+        <guid>http://localhost:1313/posts/demo2.html</guid>
+        <description>Hugo Site http://localhost:1313/posts/demo2.html -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;INSERT GRAPHIC HERE (include hyperlink in image)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;repository-title-goes-here&#34;&gt;Repository Title Goes Here&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Subtitle or Short Description Goes Here&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ideally one sentence&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;include terms/tags that can be searched&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Badges will go here&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;build status&lt;/li&gt;
+&lt;li&gt;issues (waffle.io maybe)&lt;/li&gt;
+&lt;li&gt;devDependencies&lt;/li&gt;
+&lt;li&gt;npm package&lt;/li&gt;
+&lt;li&gt;coverage&lt;/li&gt;
+&lt;li&gt;slack&lt;/li&gt;
+&lt;li&gt;downloads&lt;/li&gt;
+&lt;li&gt;gitter chat&lt;/li&gt;
+&lt;li&gt;license&lt;/li&gt;
+&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://travis-ci.org/badges/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square&#34; alt=&#34;Build Status&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://gemnasium.com/badges/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square&#34; alt=&#34;Dependency Status&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://coveralls.io/r/badges/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square&#34; alt=&#34;Coverage Status&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://codeclimate.com/github/badges/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square&#34; alt=&#34;Code Climate&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://github.com/badges/badgerbadgerbadger/issues&#34;&gt;&lt;img src=&#34;http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square&#34; alt=&#34;Github Issues&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://github.com/badges/badgerbadgerbadger/pulls&#34;&gt;&lt;img src=&#34;http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square&#34; alt=&#34;Pending Pull-Requests&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://rubygems.org/gems/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square&#34; alt=&#34;Gem Version&#34;&gt;&lt;/a&gt; &lt;a href=&#34;http://badges.mit-license.org&#34;&gt;&lt;img src=&#34;http://img.shields.io/:license-mit-blue.svg?style=flat-square&#34; alt=&#34;License&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://github.com/badges/badgerbadgerbadger&#34;&gt;&lt;img src=&#34;http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square&#34; alt=&#34;Badges&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For more on these wonderful &lt;del&gt;badgers&lt;/del&gt; badges, refer to &lt;!-- raw HTML omitted --&gt;&lt;code&gt;badgerbadgerbadger&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;INSERT ANOTHER GRAPHIC HERE&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;&#34;&gt;&lt;img src=&#34;http://i.imgur.com/dt8AUb6.png&#34; alt=&#34;INSERT YOUR GRAPHIC HERE&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Most people will glance at your &lt;code&gt;README&lt;/code&gt;, &lt;em&gt;maybe&lt;/em&gt; star it, and leave&lt;/li&gt;
+&lt;li&gt;Ergo, people should understand instantly what your project is about based on your repo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tips&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;HAVE WHITE SPACE&lt;/li&gt;
+&lt;li&gt;MAKE IT PRETTY&lt;/li&gt;
+&lt;li&gt;GIFS ARE REALLY COOL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GIF Tools&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;!-- raw HTML omitted --&gt;&lt;strong&gt;Recordit&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt; to create quicks screencasts of your desktop and export them as &lt;code&gt;GIF&lt;/code&gt;s.&lt;/li&gt;
+&lt;li&gt;For terminal sessions, there&amp;rsquo;s &lt;!-- raw HTML omitted --&gt;&lt;strong&gt;ttystudio&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt; which also supports exporting &lt;code&gt;GIF&lt;/code&gt;s.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Recordit&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://g.recordit.co/iLN6A0vSD8.gif&#34; alt=&#34;Recordit GIF&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ttystudio&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/chjj/ttystudio/master/img/example.gif&#34; alt=&#34;ttystudio GIF&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;table-of-contents-optional&#34;&gt;Table of Contents (Optional)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If your &lt;code&gt;README&lt;/code&gt; has a lot of info, section headers might be nice.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#installation&#34;&gt;Installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#features&#34;&gt;Features&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#contributing&#34;&gt;Contributing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#team&#34;&gt;Team&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#faq&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#support&#34;&gt;Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#license&#34;&gt;License&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;example-optional&#34;&gt;Example (Optional)&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// code away!
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;generateProject&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;project&lt;/span&gt; =&amp;gt; {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;code&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [];
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;js&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;js&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;project&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;js&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;code&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;js&lt;/span&gt;);
+  }
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;All the &lt;code&gt;code&lt;/code&gt; required to get started&lt;/li&gt;
+&lt;li&gt;Images of what it should look like&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;clone&#34;&gt;Clone&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Clone this repo to your local machine using &lt;code&gt;https://github.com/fvcproductions/SOMEREPO&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;If you want more syntax highlighting, format your code like this:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;update and install this package first&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ brew update
+$ brew install fvcproductions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;now install npm and bower packages&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ npm install
+$ bower install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;For all the possible languages that support syntax highlithing on GitHub (which is basically all of them), refer &lt;!-- raw HTML omitted --&gt;here&lt;!-- raw HTML omitted --&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;h2 id=&#34;usage-optional&#34;&gt;Usage (Optional)&lt;/h2&gt;
+&lt;h2 id=&#34;documentation-optional&#34;&gt;Documentation (Optional)&lt;/h2&gt;
+&lt;h2 id=&#34;tests-optional&#34;&gt;Tests (Optional)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Going into more detail on code and technologies used&lt;/li&gt;
+&lt;li&gt;I utilized this nifty &lt;!-- raw HTML omitted --&gt;Markdown Cheatsheet&lt;!-- raw HTML omitted --&gt; for this sample &lt;code&gt;README&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;contributing&#34;&gt;Contributing&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To get started&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;step-1&#34;&gt;Step 1&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Option 1&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🍴 Fork this repo!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Option 2&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;👯 Clone this repo to your local machine using &lt;code&gt;https://github.com/joanaz/HireDot2.git&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;step-2&#34;&gt;Step 2&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HACK AWAY!&lt;/strong&gt; 🔨🔨🔨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;step-3&#34;&gt;Step 3&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔃 Create a new pull request using &lt;!-- raw HTML omitted --&gt;&lt;code&gt;https://github.com/joanaz/HireDot2/compare/&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;team&#34;&gt;Team&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Or Contributors/People&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;FVCproductions&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;FVCproductions&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;FVCproductions&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://fvcproductions.com&#34;&gt;&lt;img src=&#34;https://avatars1.githubusercontent.com/u/4284691?v=3&amp;amp;s=200&#34; alt=&#34;FVCproductions&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://fvcproductions.com&#34;&gt;&lt;img src=&#34;https://avatars1.githubusercontent.com/u/4284691?v=3&amp;amp;s=200&#34; alt=&#34;FVCproductions&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://fvcproductions.com&#34;&gt;&lt;img src=&#34;https://avatars1.githubusercontent.com/u/4284691?v=3&amp;amp;s=200&#34; alt=&#34;FVCproductions&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;code&gt;github.com/fvcproductions&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;code&gt;github.com/fvcproductions&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;code&gt;github.com/fvcproductions&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;You can just grab their GitHub profile image URL&lt;/li&gt;
+&lt;li&gt;You should probably resize their picture using &lt;code&gt;?s=200&lt;/code&gt; at the end of the image URL.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;How do I do &lt;em&gt;specifically&lt;/em&gt; so and so?&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;No problem! Just do this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;support&#34;&gt;Support&lt;/h2&gt;
+&lt;p&gt;Reach out to me at one of the following places&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Website at &lt;!-- raw HTML omitted --&gt;&lt;code&gt;fvcproductions.com&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;li&gt;Twitter at &lt;!-- raw HTML omitted --&gt;&lt;code&gt;@fvcproductions&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;li&gt;Insert more social links here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;donations-optional&#34;&gt;Donations (Optional)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You could include a &lt;!-- raw HTML omitted --&gt;Gratipay&lt;!-- raw HTML omitted --&gt; link as well.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://gratipay.com/fvcproductions/&#34;&gt;&lt;img src=&#34;https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png&#34; alt=&#34;Support via Gratipay&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://badges.mit-license.org&#34;&gt;&lt;img src=&#34;http://img.shields.io/:license-mit-blue.svg?style=flat-square&#34; alt=&#34;License&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;http://opensource.org/licenses/mit-license.php&#34;&gt;MIT license&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Copyright 2015 © &lt;!-- raw HTML omitted --&gt;FVCproductions&lt;!-- raw HTML omitted --&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+- http://localhost:1313/posts/demo2.html - This is a customized copyright.</description>
+        </item>
     
     
   </channel>

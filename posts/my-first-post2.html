@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
-<title>Tags</title>
+<title>My First Post2</title>
 
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
@@ -14,12 +14,12 @@
 
 
 
-<script src="./vendor/js/jquery.min.js" ></script>
-<script src="./vendor/js/popper.min.js" ></script>
-<script src="./vendor/js/bootstrap.min.js" ></script>
-<script src="./vendor/js/smooth-scroll.polyfills.min.js" ></script>
-<link type="text/css" rel="stylesheet" href="./vendor/css/bootstrap.min.css">
-<script src="./vendor/js/vue.min.js" ></script>
+<script src="../vendor/js/jquery.min.js" ></script>
+<script src="../vendor/js/popper.min.js" ></script>
+<script src="../vendor/js/bootstrap.min.js" ></script>
+<script src="../vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="../vendor/css/bootstrap.min.css">
+<script src="../vendor/js/vue.min.js" ></script>
 
 
 
@@ -41,11 +41,7 @@
 
 
 
-<style>
-  .toc{
-    display: none !important;
-  }
-</style>
+<script src="http://localhost:1313//js/toc.js"></script>
 
 
 
@@ -75,9 +71,11 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="./posts">
+            
+            <a class="a-block nav-link-item active" href="../posts">
                 Archive
             </a>
             
@@ -87,7 +85,7 @@
             
             
             
-            <a class="a-block nav-link-item false" href="./categories">
+            <a class="a-block nav-link-item false" href="../categories">
                 Categories
             </a>
             
@@ -95,11 +93,9 @@
             
             
             
-                
             
             
-            
-            <a class="a-block nav-link-item active" href="./tags">
+            <a class="a-block nav-link-item false" href="../tags">
                 Tags
             </a>
             
@@ -109,7 +105,7 @@
             
             
             
-            <a class="a-block nav-link-item false" href="./index.xml">
+            <a class="a-block nav-link-item false" href="../index.xml">
                 RSS Feed
             </a>
             
@@ -134,6 +130,11 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 </div><div ref="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -151,8 +152,6 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
         </a>
         
         
-        
-        
     </div>
 </div><div class="single-column-drawer-container" ref="drawer"
      v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
@@ -164,9 +163,11 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="./posts">
+                
+                <a class="a-block drawer-menu-item active" href="../posts">
                     Archive
                 </a>
                 
@@ -176,7 +177,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 
                 
-                <a class="a-block drawer-menu-item false" href="./categories">
+                <a class="a-block drawer-menu-item false" href="../categories">
                     Categories
                 </a>
                 
@@ -184,11 +185,9 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 
                 
-                    
                 
                 
-                
-                <a class="a-block drawer-menu-item active" href="./tags">
+                <a class="a-block drawer-menu-item false" href="../tags">
                     Tags
                 </a>
                 
@@ -198,11 +197,16 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 
                 
                 
-                <a class="a-block drawer-menu-item false" href="./index.xml">
+                <a class="a-block drawer-menu-item false" href="../index.xml">
                     RSS Feed
                 </a>
                 
             
+            
+            <div class="toc">
+
+
+</div>
             
         </div>
     </div>
@@ -246,27 +250,69 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
             <div id="content">
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
-        <a class="a-block">
-            <div class="post-item-wrapper post-item-wrapper-no-hover">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title post-item-title-small">
-                            Tags
-                        </div>
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('http://localhost:1313/')">
+                <div class="post-title">
+                    My First Post2
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2020-05-08 20:32
+                        </time>
+                        
+
+                        
+
+                        
                     </div>
                 </div>
             </div>
-        </a>
-        
-        
-    </div>
-</div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2020-05-08</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+                    Next<br>No newer posts.
+                </a>
+                
+                
+                
+                <a class="older-posts" href="http://localhost:1313/posts/my-first-post.html">
+                    Previous<br>My First Post
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
 
 
             </div>
+        </div>
+    </div>
+</div>
 
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
 <br>
 Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>

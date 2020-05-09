@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hugo Site</title>
+    <link>http://localhost:1313/posts.html</link>
+    <description>Recent content in Posts on Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Fri, 08 May 2020 20:32:34 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Post2</title>
+      <link>http://localhost:1313/posts/my-first-post2.html</link>
+      <pubDate>Fri, 08 May 2020 20:32:34 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/my-first-post2.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>http://localhost:1313/posts/my-first-post.html</link>
+      <pubDate>Fri, 08 May 2020 17:38:50 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/my-first-post.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sampleREADME.md</title>
+      <link>http://localhost:1313/posts/demo.html</link>
+      <pubDate>Fri, 08 May 2020 17:38:50 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/demo.html</guid>
+      <description>INSERT GRAPHIC HERE (include hyperlink in image)
+Repository Title Goes Here  Subtitle or Short Description Goes Here
+  ideally one sentence
+  include terms/tags that can be searched
+ Badges will go here
+ build status issues (waffle.io maybe) devDependencies npm package coverage slack downloads gitter chat license etc.          
+ For more on these wonderful badgers badges, refer to badgerbadgerbadger.</description>
+    </item>
+    
+    <item>
+      <title>sampleREADME.md</title>
+      <link>http://localhost:1313/posts/demo2.html</link>
+      <pubDate>Fri, 08 May 2020 17:38:50 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/demo2.html</guid>
+      <description>INSERT GRAPHIC HERE (include hyperlink in image)
+Repository Title Goes Here  Subtitle or Short Description Goes Here
+  ideally one sentence
+  include terms/tags that can be searched
+ Badges will go here
+ build status issues (waffle.io maybe) devDependencies npm package coverage slack downloads gitter chat license etc.          
+ For more on these wonderful badgers badges, refer to badgerbadgerbadger.</description>
+    </item>
+    
+  </channel>
+</rss>
