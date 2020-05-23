@@ -5,20 +5,10 @@
     <description>Recent content on 技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>lizcao copyright.</copyright>
     <lastBuildDate>Sun, 24 May 2020 00:37:10 +0800</lastBuildDate>
     
         <atom:link href="https://lizcao.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    
-        <item>
-        <title>My First Post</title>
-        <link>https://lizcao.github.io/posts/my-first-post/</link>
-        <pubDate>Sun, 24 May 2020 00:37:10 +0800</pubDate>
-        
-        <guid>https://lizcao.github.io/posts/my-first-post/</guid>
-        <description>技术博客 https://lizcao.github.io/posts/my-first-post/ -- https://lizcao.github.io/posts/my-first-post/ - </description>
-        </item>
     
     
     
@@ -89,42 +79,42 @@ $client-&amp;gt;close();
 &lt;pre&gt;&lt;code&gt;php  client.php
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;抓包&#34;&gt;抓包&lt;/h2&gt;
 &lt;h2 id=&#34;模型分析&#34;&gt;模型分析&lt;/h2&gt;
-&lt;p&gt;![image-20200523184857040](/Users/clz/Library/Application Support/typora-user-images/image-20200523184857040.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/image-20200523184857040.png&#34; alt=&#34;image-20200523184857040&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上面模型网络里有五层，这里只有四层，是因为我直接请求的tcp，没有走应用层，所以只有四层。&lt;/p&gt;
 &lt;h2 id=&#34;三次握手抓包分析&#34;&gt;三次握手抓包分析&lt;/h2&gt;
 &lt;p&gt;看到wireshark已经抓到了请求&lt;/p&gt;
-&lt;p&gt;![image-20200523180836466](/Users/clz/Library/Application Support/typora-user-images/image-20200523180836466.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/image-20200523180836466.png&#34; alt=&#34;image-20200523180836466&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;第一次握手&#34;&gt;第一次握手&lt;/h5&gt;
 &lt;p&gt;客户端向服务器发送连接请求包，标志位SYN=1，序列号Seq=0（为方便下面的计算用这里的Seq起名为X），如下图&lt;/p&gt;
-&lt;p&gt;![image-20200523182423880](/Users/clz/Library/Application Support/typora-user-images/image-20200523182423880.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/image-20200523182423880.png&#34; alt=&#34;image-20200523182423880&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/132355zqm2skuwm8q2yuzg.jpg&#34; alt=&#34;132355zqm2skuwm8q2yuzg&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;第二次握手&#34;&gt;第二次握手&lt;/h5&gt;
 &lt;p&gt;服务器收到客户端发过来报文，由SYN=1知道客户端要求建立联机。向客户端发送一个SYN和ACK都为1的TCP报文，设置初始序号Seq=0（为方便下面的计算用这里的Seq起名为Y），将确认序号(Acknowledgement Number)设置为客户的序列号加1，即X+1=0+1=1，所以这里的序列号为1, 如下图&lt;/p&gt;
-&lt;p&gt;![image-20200523182738543](/Users/clz/Library/Application Support/typora-user-images/image-20200523182738543.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/image-20200523182738543.png&#34; alt=&#34;image-20200523182738543&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/132450t4spsguuwlaemez5.jpg&#34; alt=&#34;132450t4spsguuwlaemez5&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;第三次握手&#34;&gt;第三次握手&lt;/h5&gt;
 &lt;p&gt;客户端收到服务器发来的包后检查确认序号(Acknowledgement Number)是否正确，即第一次发送的序号加1（X+1=1）。以及标志位ACK是否为1。若正确，客户端再次发送确认包，ACK标志位为1，SYN标志位为0。确认序号(Acknowledgement Number)=Y+1=0+1=1，发送序号为X+1=1。服务端收到后确认序号值与ACK=1则连接建立成功，可以传送数据了。&lt;/p&gt;
-&lt;p&gt;![image-20200523183640836](/Users/clz/Library/Application Support/typora-user-images/image-20200523183640836.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/image-20200523183640836.png&#34; alt=&#34;image-20200523183640836&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/132538pqssss4ceszes4sx.jpg&#34; alt=&#34;132538pqssss4ceszes4sx&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;四次挥手抓包分析&#34;&gt;四次挥手抓包分析&lt;/h2&gt;
-&lt;p&gt;![image-20200523220651612](/Users/clz/Library/Application Support/typora-user-images/image-20200523220651612.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/image-20200523220651612.png&#34; alt=&#34;image-20200523220651612&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;第一次挥手&#34;&gt;第一次挥手&lt;/h5&gt;
 &lt;p&gt;客户端给服务器发送TCP包，用来关闭客户端到服务器的数据传送。将标志位FIN和ACK置为1，序号为X=15，确认序号为Z=1。&lt;/p&gt;
-&lt;p&gt;![image-20200523221619960](/Users/clz/Library/Application Support/typora-user-images/image-20200523221619960.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/image-20200523221619960.png&#34; alt=&#34;image-20200523221619960&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/132803xomlsmpbzmrioibb.jpg&#34; alt=&#34;132803xomlsmpbzmrioibb&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;第二次挥手&#34;&gt;第二次挥手&lt;/h5&gt;
 &lt;p&gt;服务器收到FIN后，发回一个ACK(标志位ACK=1),确认序号为收到的序号加1，即X=X+1=16。序号为收到的确认序号=Z。&lt;/p&gt;
-&lt;p&gt;![image-20200523221933721](/Users/clz/Library/Application Support/typora-user-images/image-20200523221933721.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/image-20200523221933721.png&#34; alt=&#34;image-20200523221933721&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/132951z9uzba8ind90n8ai.jpg&#34; alt=&#34;132951z9uzba8ind90n8ai&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;第三次挥手&#34;&gt;第三次挥手&lt;/h5&gt;
 &lt;p&gt;服务器关闭与客户端的连接，发送一个FIN。标志位FIN和ACK置为1，序号为Y=1，确认序号为X=16。&lt;/p&gt;
-&lt;p&gt;![image-20200523222145938](/Users/clz/Library/Application Support/typora-user-images/image-20200523222145938.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/image-20200523222145938.png&#34; alt=&#34;image-20200523222145938&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/133044hlr71pqqqurr7pzc.jpg&#34; alt=&#34;133044hlr71pqqqurr7pzc&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;第四次握手&#34;&gt;第四次握手&lt;/h5&gt;
 &lt;p&gt;客户端收到服务器发送的FIN之后，发回ACK确认(标志位ACK=1),确认序号为收到的序号加1，即Y+1=2。序号为收到的确认序号X=16。&lt;/p&gt;
-&lt;p&gt;![image-20200523222333500](/Users/clz/Library/Application Support/typora-user-images/image-20200523222333500.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/image-20200523222333500.png&#34; alt=&#34;image-20200523222333500&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lizcao.github.io/images/133145oqqlxqgxoaz1g13w.jpg&#34; alt=&#34;133145oqqlxqgxoaz1g13w&#34;&gt;&lt;/p&gt;
-- https://lizcao.github.io/posts/tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/ - </description>
+- https://lizcao.github.io/posts/tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/ - lizcao copyright.</description>
         </item>
     
     

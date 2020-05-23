@@ -6,9 +6,19 @@
     <description>Recent content in Categories on 技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>lizcao copyright.</copyright>
     
 	<atom:link href="https://lizcao.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TCP/HTTP</title>
+      <link>https://lizcao.github.io/categories/tcp/http/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lizcao.github.io/categories/tcp/http/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

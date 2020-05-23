@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 技术博客</title>
-    <link>https://lizcao.github.io/posts/</link>
-    <description>Recent content in Posts on 技术博客</description>
+    <title>TCP/HTTP on 技术博客</title>
+    <link>https://lizcao.github.io/categories/tcp/http/</link>
+    <description>Recent content in TCP/HTTP on 技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>lizcao copyright.</copyright>
-    <lastBuildDate>Sun, 24 May 2020 00:37:10 +0800</lastBuildDate>
     
-	<atom:link href="https://lizcao.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lizcao.github.io/categories/tcp/http/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

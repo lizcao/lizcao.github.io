@@ -6,9 +6,20 @@
     <description>Recent content in Tags on 技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>lizcao copyright.</copyright>
+    <lastBuildDate>Sun, 24 May 2020 00:37:10 +0800</lastBuildDate>
     
 	<atom:link href="https://lizcao.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>tcp</title>
+      <link>https://lizcao.github.io/tags/tcp/</link>
+      <pubDate>Sun, 24 May 2020 00:37:10 +0800</pubDate>
+      
+      <guid>https://lizcao.github.io/tags/tcp/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
