@@ -1,23 +1,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>技术博客</title>
+    <link>https://lizcao.github.io/</link>
+    <description>Recent content on 技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 May 2020 00:37:10 +0800</lastBuildDate>
     
-        <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://lizcao.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>My First Post</title>
-        <link>http://example.org/posts/my-first-post/</link>
+        <link>https://lizcao.github.io/posts/my-first-post/</link>
         <pubDate>Sun, 24 May 2020 00:37:10 +0800</pubDate>
         
-        <guid>http://example.org/posts/my-first-post/</guid>
-        <description>My New Hugo Site http://example.org/posts/my-first-post/ -- http://example.org/posts/my-first-post/ - </description>
+        <guid>https://lizcao.github.io/posts/my-first-post/</guid>
+        <description>技术博客 https://lizcao.github.io/posts/my-first-post/ -- https://lizcao.github.io/posts/my-first-post/ - </description>
         </item>
     
     
