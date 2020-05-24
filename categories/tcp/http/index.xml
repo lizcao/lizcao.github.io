@@ -17,12 +17,38 @@
       <pubDate>Sun, 24 May 2020 00:37:10 +0800</pubDate>
       
       <guid>https://lizcao.github.io/posts/tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</guid>
-      <description>知识点梳理 三次握手流程图 四次挥手流程图 tcp报文 其中，Seq(Sequence Number) 是 32 位的序列号，Acknowledgment number 称之为确认序号，也是 32 位的，但是他不是标志位 ACK，这个要区别开，当 ACK 置 1 时 Acknowledgment number 才有效，指接收方期待的下一个报文段的序列号。
+      <description>人，只要有一种信念，有所追求，什么艰苦都能忍受，什么环境也都能适应。——丁玲
+ 三次握手流程图 四次挥手流程图 tcp报文 其中，Seq(Sequence Number) 是 32 位的序列号，Acknowledgment number 称之为确认序号，也是 32 位的，但是他不是标志位 ACK，这个要区别开，当 ACK 置 1 时 Acknowledgment number 才有效，指接收方期待的下一个报文段的序列号。
 TCP 报头信息中有六个控制位(标志位)，分别是：SYN、ACK、PSH、FIN、RST 和 URG。
 SYN: 表示建立连接 FIN: 表示关闭连接 ACK: 表示响应 PSH: 表示有数据传输 RST: 表示连接重置 URG: 表示紧急数据 Seq 序列号有两个作用： 第一，在 SYN 置 1 时，此为当前连接的初始序列号(Initial Sequence Number, ISN)该值是个随机值，数据的第一个字节序号为此 ISN+1。
 第二，在 SYN 置 0 时，为当前连接报文段的累计数据包字节数。
-网络模型 代码准备 server.php
+网络模型 计算机网络分层模型主要有OSI七层模型，TCP/IP五层模型，也有一种四层模型，四层模型会把网卡层和物理层统称为网络接口层。
+OSI七层模型存在于教科书了，TCP/IP五层模型是日常运用最为广泛的一种网络架构模型。在学习网络知识时也要把握住重点去学，七层模型了解即可。
+代码准备 server.php
 &amp;lt;?php //创建Server对象，监听 127.0.0.1:9501端口 $serv = new Swoole\Server(&amp;quot;127.0.0.1&amp;quot;, 9501); //监听连接进入事件 $serv-&amp;gt;on(&#39;Connect&#39;, function ($serv, $fd) { echo &amp;quot;Client: Connect.</description>
+    </item>
+    
+    <item>
+      <title>TCP粘包问题正解</title>
+      <link>https://lizcao.github.io/posts/tcp%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98%E6%AD%A3%E8%A7%A3/</link>
+      <pubDate>Sun, 24 May 2020 00:37:10 +0800</pubDate>
+      
+      <guid>https://lizcao.github.io/posts/tcp%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98%E6%AD%A3%E8%A7%A3/</guid>
+      <description>自知之明是最难得的知识。
+ TCP传输的特点 TCP是一种面向连接的、可靠的、基于字节流的传输层通信协议
+面向连接 面向连接意味着使用tcp的应用程序在传输数据前必须先建立连接，三次握手
+基于字节流的传输 发送端执行的写操作数和接收端执行的读操作次数之间没有任何数量关系，当发送端应用程序连续执行多次写操作的时，TCP模块先将这些数据放入TCP发送缓冲区中。当TCP模块真正开始发送数据的时候，发送缓冲区中这些等待发送的数据可能被封装成一个或多个TCP报文段发出
+可靠  TCP协议采用发送应答机制，即发送端发送的每个TCP报文段都必须得到接收方的应答，才能认为这个TCP报文段传输成功。 TCP协议采用超时重传机制，发送端在发送出一个TCP报文段之后启动定时器，如果在定时时间内未收到应答，它将重新发送该报文段。  什么是TCP粘包问题 TCP粘包是一个错误的说法，TCP是流式传输，没有包的概念，更没有粘包一说。
+人们常说的粘包问题，是指发送方应该以什么格式发送数据，接收方能正确解析出数据，这个叫应用层协议，你自己定，跟TCP完全无关。如果是发文件，最简单的你可以用http协议封装，如果你发的http协议数据是100%正确的，无论哪个接收方（nginx/tomcat/iis）保证能一字节不差地收下，因为http协议本身就带header和body，header里有Content-Length: 12345指定了body的大小，body才是文件本身。
+你不用http协议，直接发文件数据，那么问题来了，接收方怎么知道应该收多少字节后文件结束？这个才是真正粘包问题的由来。
+所有TCP粘包问题就转化成了如何界定TCP流式传输边界的问题。
+TCP粘包的原因 缓冲区 通常我们直觉性的认为，客户端直接向网络中传输数据，对端从网络中读取数据，但是这是不正确的。
+socket有缓冲区buffer的概念，每个TCP socket在内核中都有一个发送缓冲区和一个接收缓冲区。客户端send操作仅仅是把数据拷贝到buffer中，也就是说send完成了，数据并不代表已经发送到服务端了，之后才由TCP协议从buffer中发送到服务端。此时服务端的接收缓冲区被TCP缓存网络上来的数据，而后server才从buffer中读取数据。
+当连续发送数据时，由于tcp协议的nagle算法，会将较小的内容拼接成大的内容，一次性发送到服务器端，因此造成粘包 当发送内容较大时，由于服务器端的recv（buffer_size）方法中的buffer_size较小，不能一次性完全接收全部内容，因此在下一次请求到达时，接收的内容依然是上一次没有完全接收完的内容，因此造成粘包现象。 接收数据端的应用层没有及时读取接收缓冲区中的数据，将发生粘包。 粘包、拆包表现形式 第一种情况，接收端正常收到两个数据包，即没有发生拆包和粘包的现象。
+第二种情况，接收端只收到一个数据包，由于TCP是不会出现丢包的，所以这一个数据包中包含了发送端发送的两个数据包的信息，这种现象即为粘包。这种情况由于接收端不知道这两个数据包的界限，所以对于接收端来说很难处理。
+第三种情况，这种情况有两种表现形式。接收端收到了两个数据包，但是这两个数据包要么是不完整的，要么就是多出来一块，这种情况即发生了拆包和粘包。这两种情况如果不加特殊处理，对于接收端同样是不好处理的。
+TCP粘包的解决方法  EOF 结束符协议 固定包头 + 包体协议  粘包复现 创建一个server，server端代码如下
+&amp;lt;?php class TcpBufferServer { private $_serv; /** * init */ public function __construct() { $this-&amp;gt;_serv = new Swoole\Server(&amp;quot;127.0.0.1&amp;quot;, 9501); $this-&amp;gt;_serv-&amp;gt;set([ &#39;worker_num&#39; =&amp;gt; 1, ]); $this-&amp;gt;_serv-&amp;gt;on(&#39;Receive&#39;, [$this, &#39;onReceive&#39;]); } public function onReceive($serv, $fd, $fromId, $data) { echo &amp;quot;Server received data: {$data}&amp;quot; .</description>
     </item>
     
   </channel>
