@@ -1,56 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on 技术博客</title>
-    <link>https://lizcao.github.io/posts/</link>
-    <description>Recent content in Posts on 技术博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>lizcao copyright.</copyright>
-    <lastBuildDate>Sun, 24 May 2020 00:37:10 +0800</lastBuildDate>
-    
-	<atom:link href="https://lizcao.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>TCP三次握手和四次挥手</title>
-      <link>https://lizcao.github.io/posts/tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</link>
-      <pubDate>Sun, 24 May 2020 00:37:10 +0800</pubDate>
-      
-      <guid>https://lizcao.github.io/posts/tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</guid>
-      <description>人，只要有一种信念，有所追求，什么艰苦都能忍受，什么环境也都能适应。——丁玲
- 三次握手流程图 四次挥手流程图 tcp报文 其中，Seq(Sequence Number) 是 32 位的序列号，Acknowledgment number 称之为确认序号，也是 32 位的，但是他不是标志位 ACK，这个要区别开，当 ACK 置 1 时 Acknowledgment number 才有效，指接收方期待的下一个报文段的序列号。
-TCP 报头信息中有六个控制位(标志位)，分别是：SYN、ACK、PSH、FIN、RST 和 URG。
-SYN: 表示建立连接 FIN: 表示关闭连接 ACK: 表示响应 PSH: 表示有数据传输 RST: 表示连接重置 URG: 表示紧急数据 Seq 序列号有两个作用： 第一，在 SYN 置 1 时，此为当前连接的初始序列号(Initial Sequence Number, ISN)该值是个随机值，数据的第一个字节序号为此 ISN+1。
-第二，在 SYN 置 0 时，为当前连接报文段的累计数据包字节数。
-网络模型 计算机网络分层模型主要有OSI七层模型，TCP/IP五层模型，也有一种四层模型，四层模型会把网卡层和物理层统称为网络接口层。
-OSI七层模型存在于教科书了，TCP/IP五层模型是日常运用最为广泛的一种网络架构模型。在学习网络知识时也要把握住重点去学，七层模型了解即可。
-代码准备 server.php
-&amp;lt;?php //创建Server对象，监听 127.0.0.1:9501端口 $serv = new Swoole\Server(&amp;quot;127.0.0.1&amp;quot;, 9501); //监听连接进入事件 $serv-&amp;gt;on(&#39;Connect&#39;, function ($serv, $fd) { echo &amp;quot;Client: Connect.</description>
-    </item>
-    
-    <item>
-      <title>TCP粘包问题正解</title>
-      <link>https://lizcao.github.io/posts/tcp%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98%E6%AD%A3%E8%A7%A3/</link>
-      <pubDate>Sun, 24 May 2020 00:37:10 +0800</pubDate>
-      
-      <guid>https://lizcao.github.io/posts/tcp%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98%E6%AD%A3%E8%A7%A3/</guid>
-      <description>自知之明是最难得的知识。
- TCP传输的特点 TCP是一种面向连接的、可靠的、基于字节流的传输层通信协议
-面向连接 面向连接意味着使用tcp的应用程序在传输数据前必须先建立连接，三次握手
-基于字节流的传输 发送端执行的写操作数和接收端执行的读操作次数之间没有任何数量关系，当发送端应用程序连续执行多次写操作的时，TCP模块先将这些数据放入TCP发送缓冲区中。当TCP模块真正开始发送数据的时候，发送缓冲区中这些等待发送的数据可能被封装成一个或多个TCP报文段发出
-可靠  TCP协议采用发送应答机制，即发送端发送的每个TCP报文段都必须得到接收方的应答，才能认为这个TCP报文段传输成功。 TCP协议采用超时重传机制，发送端在发送出一个TCP报文段之后启动定时器，如果在定时时间内未收到应答，它将重新发送该报文段。  什么是TCP粘包问题 TCP粘包是一个错误的说法，TCP是流式传输，没有包的概念，更没有粘包一说。
-人们常说的粘包问题，是指发送方应该以什么格式发送数据，接收方能正确解析出数据，这个叫应用层协议，你自己定，跟TCP完全无关。如果是发文件，最简单的你可以用http协议封装，如果你发的http协议数据是100%正确的，无论哪个接收方（nginx/tomcat/iis）保证能一字节不差地收下，因为http协议本身就带header和body，header里有Content-Length: 12345指定了body的大小，body才是文件本身。
-你不用http协议，直接发文件数据，那么问题来了，接收方怎么知道应该收多少字节后文件结束？这个才是真正粘包问题的由来。
-所有TCP粘包问题就转化成了如何界定TCP流式传输边界的问题。
-TCP粘包的原因 缓冲区 通常我们直觉性的认为，客户端直接向网络中传输数据，对端从网络中读取数据，但是这是不正确的。
-socket有缓冲区buffer的概念，每个TCP socket在内核中都有一个发送缓冲区和一个接收缓冲区。客户端send操作仅仅是把数据拷贝到buffer中，也就是说send完成了，数据并不代表已经发送到服务端了，之后才由TCP协议从buffer中发送到服务端。此时服务端的接收缓冲区被TCP缓存网络上来的数据，而后server才从buffer中读取数据。
-当连续发送数据时，由于tcp协议的nagle算法，会将较小的内容拼接成大的内容，一次性发送到服务器端，因此造成粘包 当发送内容较大时，由于服务器端的recv（buffer_size）方法中的buffer_size较小，不能一次性完全接收全部内容，因此在下一次请求到达时，接收的内容依然是上一次没有完全接收完的内容，因此造成粘包现象。 接收数据端的应用层没有及时读取接收缓冲区中的数据，将发生粘包。 粘包、拆包表现形式 第一种情况，接收端正常收到两个数据包，即没有发生拆包和粘包的现象。
-第二种情况，接收端只收到一个数据包，由于TCP是不会出现丢包的，所以这一个数据包中包含了发送端发送的两个数据包的信息，这种现象即为粘包。这种情况由于接收端不知道这两个数据包的界限，所以对于接收端来说很难处理。
-第三种情况，这种情况有两种表现形式。接收端收到了两个数据包，但是这两个数据包要么是不完整的，要么就是多出来一块，这种情况即发生了拆包和粘包。这两种情况如果不加特殊处理，对于接收端同样是不好处理的。
-TCP粘包的解决方法  EOF 结束符协议 固定包头 + 包体协议  粘包复现 创建一个server，server端代码如下
-&amp;lt;?php class TcpBufferServer { private $_serv; /** * init */ public function __construct() { $this-&amp;gt;_serv = new Swoole\Server(&amp;quot;127.0.0.1&amp;quot;, 9501); $this-&amp;gt;_serv-&amp;gt;set([ &#39;worker_num&#39; =&amp;gt; 1, ]); $this-&amp;gt;_serv-&amp;gt;on(&#39;Receive&#39;, [$this, &#39;onReceive&#39;]); } public function onReceive($serv, $fd, $fromId, $data) { echo &amp;quot;Server received data: {$data}&amp;quot; .</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - LoveIt</title>
+        <link>https://example.com/posts/</link>
+        <description>所有文章 | LoveIt</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 20 Jun 2020 00:37:10 &#43;0800</lastBuildDate><atom:link href="https://example.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>docker创建镜像有两种方式</title>
+    <link>https://example.com/docker%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
+    <pubDate>Sat, 20 Jun 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/docker%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
+    <description><![CDATA[docker创建镜像有两种方式 dockerfile方式 创建dockerfile 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31]]></description>
+</item><item>
+    <title>php多进程</title>
+    <link>https://example.com/php%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
+    <pubDate>Wed, 17 Jun 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/php%E5%A4%9A%E8%BF%9B%E7%A8%8B/</guid>
+    <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 &lt;?php $pid = pcntl_fork(); //父进程和子进程都会执行下面代码 if ($pid == -1) { //错误处理：创建子进程失败时返回-1. die(&#39;could not fork&#39;); } else if ($pid) { //父进]]></description>
+</item><item>
+    <title>swoole进程模型</title>
+    <link>https://example.com/swoole%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B/</link>
+    <pubDate>Wed, 27 May 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/swoole%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B/</guid>
+    <description><![CDATA[进程结构图 Reactor 线程 Reactor 线程是在 Master 进程中创建的线程 负责维护客户端 TCP 连接、处理网络 IO、处理协议、收发数据 不执行任何 PHP 代码 将 TCP 客户端发来的数据缓冲、]]></description>
+</item><item>
+    <title>jmeter&#43;grafana&#43;influxdb可视化性能监控平台</title>
+    <link>https://example.com/docker%E4%B8%8B%E6%90%AD%E5%BB%BAjmeter-grafana-influxdb%E5%8F%AF%E8%A7%86%E5%8C%96%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E5%B9%B3%E5%8F%B0/</link>
+    <pubDate>Mon, 25 May 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/docker%E4%B8%8B%E6%90%AD%E5%BB%BAjmeter-grafana-influxdb%E5%8F%AF%E8%A7%86%E5%8C%96%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E5%B9%B3%E5%8F%B0/</guid>
+    <description><![CDATA[1、安装influxdb 1 2 3 4 docker search influx docker pull influxdb docker run --name my_influ -p 8086:8086 influxdb docker exec -it my_influ /bin/bash 创建数据库 1 2 3 4 influx create database jmeter show databases exit 2、安装grafana 1 2 3 docker search grafana docker pull grafana/grafana]]></description>
+</item><item>
+    <title>php-fpm运作原理</title>
+    <link>https://example.com/php-fpm%E8%BF%90%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+    <pubDate>Mon, 25 May 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/php-fpm%E8%BF%90%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+    <description><![CDATA[PHP-FPM 的运作模式 PHP-FPM是一个多进程的 FastCGI 管理程序，是绝大多数 PHP应用所使用的运行模式。 假设我们使用 Nginx 提供 HTTP 服务（Apache 同理），所有]]></description>
+</item><item>
+    <title>PHP引用计数</title>
+    <link>https://example.com/php%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0/</link>
+    <pubDate>Mon, 25 May 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/php%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0/</guid>
+    <description><![CDATA[变量容器 每个php变量存在一个叫”zval”的变量容器中。 一个zval变量容器，除了包含变量的类型和值，还包括两个字节的额外信息。 is_ref 第一个是]]></description>
+</item><item>
+    <title>swoole粘包问题</title>
+    <link>https://example.com/swoole%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Mon, 25 May 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/swoole%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[自知之明是最难得的知识。 TCP传输的特点 TCP是一种面向连接的、可靠的、基于字节流的传输层通信协议 面向连接 面向连接意味着使用tcp的应用程序]]></description>
+</item><item>
+    <title>tcp三次握手和四次挥手</title>
+    <link>https://example.com/tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</link>
+    <pubDate>Sun, 24 May 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</guid>
+    <description><![CDATA[人，只要有一种信念，有所追求，什么艰苦都能忍受，什么环境也都能适应。——丁玲 三次握手流程图 四次挥手流程图 tcp报文 其中，Seq(Sequen]]></description>
+</item></channel>
 </rss>

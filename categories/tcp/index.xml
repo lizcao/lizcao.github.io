@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>tcp - 分类 - LoveIt</title>
+        <link>https://example.com/categories/tcp/</link>
+        <description>tcp - 分类 - LoveIt</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 24 May 2020 00:37:10 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/tcp/" rel="self" type="application/rss+xml" /><item>
+    <title>tcp三次握手和四次挥手</title>
+    <link>https://example.com/tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</link>
+    <pubDate>Sun, 24 May 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</guid>
+    <description><![CDATA[人，只要有一种信念，有所追求，什么艰苦都能忍受，什么环境也都能适应。——丁玲 三次握手流程图 四次挥手流程图 tcp报文 其中，Seq(Sequen]]></description>
+</item></channel>
+</rss>
