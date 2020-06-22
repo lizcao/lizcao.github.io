@@ -3,7 +3,21 @@
         <title>swoole - 分类 - LoveIt</title>
         <link>https://example.com/categories/swoole/</link>
         <description>swoole - 分类 - LoveIt</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 May 2020 00:37:10 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/swoole/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Jun 2020 00:37:10 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/swoole/" rel="self" type="application/rss+xml" /><item>
+    <title>理解字节序</title>
+    <link>https://example.com/%E7%90%86%E8%A7%A3%E5%AD%97%E8%8A%82%E5%BA%8F/</link>
+    <pubDate>Sun, 21 Jun 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/%E7%90%86%E8%A7%A3%E5%AD%97%E8%8A%82%E5%BA%8F/</guid>
+    <description><![CDATA[1、什么是字节序 字节序，顾名思义就是字节的顺序。更具体的讲，它是多字节数据存储和传输时，字节的顺序。 2、为什么有“字节序”这个东西 因为物理内]]></description>
+</item><item>
+    <title>高性能http服务器</title>
+    <link>https://example.com/%E9%AB%98%E6%80%A7%E8%83%BDhttp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <pubDate>Sat, 20 Jun 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/%E9%AB%98%E6%80%A7%E8%83%BDhttp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+    <description><![CDATA[查看最大连接数 1 2 clz@V_LZCAO-MB0 http % ulimit -n 256]]></description>
+</item><item>
     <title>swoole进程模型</title>
     <link>https://example.com/swoole%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B/</link>
     <pubDate>Wed, 27 May 2020 00:37:10 &#43;0800</pubDate>

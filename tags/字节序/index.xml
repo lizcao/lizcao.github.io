@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>字节序 - 标签 - LoveIt</title>
+        <link>https://example.com/tags/%E5%AD%97%E8%8A%82%E5%BA%8F/</link>
+        <description>字节序 - 标签 - LoveIt</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Jun 2020 00:37:10 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%AD%97%E8%8A%82%E5%BA%8F/" rel="self" type="application/rss+xml" /><item>
+    <title>理解字节序</title>
+    <link>https://example.com/%E7%90%86%E8%A7%A3%E5%AD%97%E8%8A%82%E5%BA%8F/</link>
+    <pubDate>Sun, 21 Jun 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/%E7%90%86%E8%A7%A3%E5%AD%97%E8%8A%82%E5%BA%8F/</guid>
+    <description><![CDATA[1、什么是字节序 字节序，顾名思义就是字节的顺序。更具体的讲，它是多字节数据存储和传输时，字节的顺序。 2、为什么有“字节序”这个东西 因为物理内]]></description>
+</item></channel>
+</rss>

@@ -58,11 +58,11 @@ socket有缓冲区buffer的概念，每个TCP socket在内核中都有一个发�
 - EOF 结束符协议
 - 固定包头 + 包体协议
 
-### 粘包复现
+#### 粘包复现
 
 创建一个server，server端代码如下
 
-{{< highlight php  >}}
+```php
 <?php
 
 class TcpBufferServer
@@ -91,16 +91,16 @@ class TcpBufferServer
     {
         $this->_serv->start();
     }
+
 }
 
 $reload = new TcpBufferServer;
 $reload->start();
-{{< / highlight >}}
+```
 
 server的代码很简单，仅仅是在收到客户端代码后，标准输出一句话而已，client的代码需要注意了，我们写了一个for循环，连续向server send三条信息，代码如下
 
-{{< highlight php  >}}
-
+```php
 <?php
 
 $client = new swoole_client(SWOOLE_SOCK_TCP, SWOOLE_SOCK_SYNC);
@@ -111,17 +111,17 @@ for ($i = 0; $i < 3; $i++) {
     $client->send("Just a test.\n");
 }
 $client->close();
-{{< / highlight >}}
+```
 
 
 在未运行测试的情况下，我们期望server所在终端输出的结果应该是这样的
 
-{{< highlight php  >}}
+```php
 <?php
 Server received data: Just a test.
 Server received data: Just a test.
 Server received data: Just a test.
-{{<  / highlight  >}}
+```
 
 
 注意哦，我们期望的结果是server被回调了3次，才有上述期望的结果值
@@ -140,7 +140,7 @@ Server received data: Just a test.
 
 由抓包的图可见，三次请求的内容到了缓冲区后，作为两次发送，有两个数据发生了粘包，到了服务端缓冲区后，是三个一起取出产生了粘包。
 
-### EOF结束协议
+#### EOF结束协议
 
 EOF，end of file，意思是我们在每一个数据包的结尾加一个eof标记，表示这就是一个完整的数据包，但是如果你的数据本身含有EOF标记，那就会造成收到的数据包不完整，所以开启EOF支持后，应避免数据中含有EOF标记。
 
@@ -158,8 +158,7 @@ swoole_server收到一个数据包时，会检测数据包的结尾是否是我�
 
 server开启eof检测并指定eof标记是\r\n，代码如下
 
-{{< highlight php  >}}
-
+```php
 <?php
 
 class TcpBufferServer
@@ -180,7 +179,7 @@ class TcpBufferServer
             'open_eof_check' => true, //打开EOF检测
             'package_eof' => "\r\n", //设置EOF
         ]);
-
+    
         $this->_serv->on('Receive', [$this, 'onReceive']);
     }
     public function onReceive($serv, $fd, $fromId, $data)
@@ -194,16 +193,16 @@ class TcpBufferServer
     {
         $this->_serv->start();
     }
+
 }
 
 $reload = new TcpBufferServer;
 $reload->start();
-{{< /highlight  >}}
+```
 
 客户端设置发送的数据末尾是\r\n符号，代码如下
 
-{{< highlight php  >}}
-
+```php
 <?php
 
 $client = new swoole_client(SWOOLE_SOCK_TCP, SWOOLE_SOCK_SYNC);
@@ -219,7 +218,7 @@ for ($i = 0; $i < 3; $i++) {
 }
 
 $client->close();
-{{< /highlight  >}}
+```
 
 
 按照我们刚才的分析，server的效果可能会一次性收到多个完整的包，我们运行看看结果
@@ -230,7 +229,7 @@ $client->close();
 
 原来我们还需要在onReceive回调内对收到的数据进行拆分处理
 
-{{< highlight php  >}}
+```php
 <?php
 public function onReceive($serv, $fd, $fromId, $data)
 {
@@ -241,11 +240,12 @@ public function onReceive($serv, $fd, $fromId, $data)
     {
         if(!$data)
             continue;
-
+    
         echo "Server received data: {$data}" . PHP_EOL;
     }
+
 }
-{{< /highlight >}}
+```
 
 
 此时我们再看下运行结果
@@ -256,7 +256,7 @@ public function onReceive($serv, $fd, $fromId, $data)
 
 在案例的基础上我们看看open_eof_split配置
 
-{{< highlight php  >}}
+```php
 <?php
 $this->_serv->set([
     'worker_num' => 1,
@@ -264,17 +264,17 @@ $this->_serv->set([
     'package_eof' => "\r\n", //设置EOF
     'open_eof_split' => true,
 ]);
-{{< /highlight   >}}
+```
 
 onReceive的回调，我们不需要自行拆包
 
-{{< highlight php  >}}
+```php
 <?php
 public function onReceive($serv, $fd, $fromId, $data)
 {
      echo "Server received data: {$data}" . PHP_EOL;
 }
-{{< /highlight   >}}
+```
 
 
 client的测试代码使用\r\n（同server端package_eof标记一致），我们看下运行效果
@@ -283,16 +283,16 @@ client的测试代码使用\r\n（同server端package_eof标记一致），我�
 
 EOF标记解决粘包就说这么多，下面我们再看看另一种解决方案
 
-### 固定包头+包体协议
+#### 固定包头+包体协议
 
 固定包头是一种非常通用的协议，它的含义就是在你要发送的数据包的前面，添加一段信息，这段信息了包含了你要发送的数据包的长度，长度一般是2个或者4个字节的整数。
 
 在这种协议下，我们的数据包的组成就是包头+包体。其中包头就是包体长度的二进制形式。比如我们本来想向服务端发送一段数据 "Just a test." 共12个字符，现在我们要发送的数据就应该是这样的
 
-{{< highlight php  >}}
+```php
 <?php
 pack('N', strlen("Just a test.")) . "Just a test."
-{{< /highlight   >}}
+```
 
 其中php的pack函数是把数据打包成二进制字符串。
 
@@ -304,7 +304,7 @@ pack('N', strlen("Just a test.")) . "Just a test."
 
 server代码
 
-{{< highlight php  >}}
+```php
 <?php
 
 class ServerPack
@@ -341,15 +341,16 @@ class ServerPack
     {
         $this->_serv->start();
     }
+
 }
 
 $reload = new ServerPack;
 $reload->start();
-{{< /highlight   >}}
+```
 
 客户端的代码
 
-{{< highlight php  >}}
+```php
 <?php
 
 $client = new swoole_client(SWOOLE_SOCK_TCP, SWOOLE_SOCK_SYNC);
@@ -363,7 +364,7 @@ for ($i = 0; $i < 3; $i++) {
 }
 
 $client->close();
-{{< /highlight   >}}
+```
 
 运行的结果
 
@@ -385,12 +386,12 @@ $client->close();
 
 4、既然如此，我们就可以在onReceive回调对数据解包，然后从包头中取出包体长度，再从接收到的数据中截取真正的包体。
 
-{{< highlight php  >}}
+```php
 <?php
 $info = unpack('N', $data);
 $len = $info[1];
 $body = substr($data, - $len);
 echo "server received data: {$body}\n";
-{{< /highlight   >}}
+```
 
 

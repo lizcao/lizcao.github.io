@@ -34,7 +34,7 @@
                             "url": "https:\/\/example.com\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","wordcount":  4325 ,
+                        }],"genre": "posts","wordcount":  4329 ,
         "url": "https:\/\/example.com\/swoole%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98\/","datePublished": "2020-05-25T00:37:10+08:00","dateModified": "2020-05-25T00:37:10+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -116,7 +116,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">swoole粘包问题</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>lizcao</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/swoole/"><i class="far fa-folder fa-fw"></i>swoole</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-25">2020-05-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4325 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-25">2020-05-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4329 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/swoole%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="swoole粘包问题">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -141,10 +141,13 @@
         <li><a href="#粘包拆包表现形式">粘包、拆包表现形式</a></li>
       </ul>
     </li>
-    <li><a href="#tcp粘包的解决方法">TCP粘包的解决方法</a></li>
-    <li><a href="#粘包复现">粘包复现</a></li>
-    <li><a href="#eof结束协议">EOF结束协议</a></li>
-    <li><a href="#固定包头包体协议">固定包头+包体协议</a></li>
+    <li><a href="#tcp粘包的解决方法">TCP粘包的解决方法</a>
+      <ul>
+        <li><a href="#粘包复现">粘包复现</a></li>
+        <li><a href="#eof结束协议">EOF结束协议</a></li>
+        <li><a href="#固定包头包体协议">固定包头+包体协议</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
@@ -199,7 +202,7 @@
 <li>EOF 结束符协议</li>
 <li>固定包头 + 包体协议</li>
 </ul>
-<h3 id="粘包复现">粘包复现</h3>
+<h4 id="粘包复现">粘包复现</h4>
 <p>创建一个server，server端代码如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -235,6 +238,7 @@
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
@@ -265,14 +269,14 @@
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_serv</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
     <span class="p">}</span>
+
 <span class="p">}</span>
 
 <span class="nv">$reload</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TcpBufferServer</span><span class="p">;</span>
 <span class="nv">$reload</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>server的代码很简单，仅仅是在收到客户端代码后，标准输出一句话而已，client的代码需要注意了，我们写了一个for循环，连续向server send三条信息，代码如下</p>
+</div><p>server的代码很简单，仅仅是在收到客户端代码后，标准输出一句话而已，client的代码需要注意了，我们写了一个for循环，连续向server send三条信息，代码如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -299,8 +303,7 @@
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>在未运行测试的情况下，我们期望server所在终端输出的结果应该是这样的</p>
+</div><p>在未运行测试的情况下，我们期望server所在终端输出的结果应该是这样的</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -315,8 +318,7 @@
 <span class="nx">Server</span> <span class="nx">received</span> <span class="nx">data</span><span class="o">:</span> <span class="nx">Just</span> <span class="nx">a</span> <span class="nx">test</span><span class="o">.</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>注意哦，我们期望的结果是server被回调了3次，才有上述期望的结果值</p>
+</div><p>注意哦，我们期望的结果是server被回调了3次，才有上述期望的结果值</p>
 <p>实际运行的结果呢，是否与我们所期望的一致？我们看下</p>
 <p><img
         class="lazyload"
@@ -345,7 +347,7 @@
         alt="/images/image-20200524161040797.png"
         title="image-20200524161040797" /></p>
 <p>由抓包的图可见，三次请求的内容到了缓冲区后，作为两次发送，有两个数据发生了粘包，到了服务端缓冲区后，是三个一起取出产生了粘包。</p>
-<h3 id="eof结束协议">EOF结束协议</h3>
+<h4 id="eof结束协议">EOF结束协议</h4>
 <p>EOF，end of file，意思是我们在每一个数据包的结尾加一个eof标记，表示这就是一个完整的数据包，但是如果你的数据本身含有EOF标记，那就会造成收到的数据包不完整，所以开启EOF支持后，应避免数据中含有EOF标记。</p>
 <p>在swoole_server中，我们可以配置open_eof_check为true，打开EOF检测，配置package_eof来指定EOF标记。</p>
 <p>swoole_server收到一个数据包时，会检测数据包的结尾是否是我们设置的EOF标记，如果不是就会一直拼接数据包，直到超出buffer或者超时才会终止，一旦认定是一个完整的数据包，就会投递给Worker进程，这时候我们才可以在回调内处理数据。</p>
@@ -394,6 +396,7 @@
 </span><span class="lnt">36
 </span><span class="lnt">37
 </span><span class="lnt">38
+</span><span class="lnt">39
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
@@ -416,7 +419,7 @@
             <span class="s1">&#39;open_eof_check&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span> <span class="c1">//打开EOF检测
 </span><span class="c1"></span>            <span class="s1">&#39;package_eof&#39;</span> <span class="o">=&gt;</span> <span class="s2">&#34;</span><span class="se">\r\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="c1">//设置EOF
 </span><span class="c1"></span>        <span class="p">]);</span>
-
+    
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_serv</span><span class="o">-&gt;</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;Receive&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nv">$this</span><span class="p">,</span> <span class="s1">&#39;onReceive&#39;</span><span class="p">]);</span>
     <span class="p">}</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">onReceive</span><span class="p">(</span><span class="nv">$serv</span><span class="p">,</span> <span class="nv">$fd</span><span class="p">,</span> <span class="nv">$fromId</span><span class="p">,</span> <span class="nv">$data</span><span class="p">)</span>
@@ -430,14 +433,14 @@
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_serv</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
     <span class="p">}</span>
+
 <span class="p">}</span>
 
 <span class="nv">$reload</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TcpBufferServer</span><span class="p">;</span>
 <span class="nv">$reload</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>客户端设置发送的数据末尾是\r\n符号，代码如下</p>
+</div><p>客户端设置发送的数据末尾是\r\n符号，代码如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -474,8 +477,7 @@
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>按照我们刚才的分析，server的效果可能会一次性收到多个完整的包，我们运行看看结果</p>
+</div><p>按照我们刚才的分析，server的效果可能会一次性收到多个完整的包，我们运行看看结果</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -502,6 +504,7 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
@@ -514,14 +517,14 @@
     <span class="p">{</span>
         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$data</span><span class="p">)</span>
             <span class="k">continue</span><span class="p">;</span>
-
+    
         <span class="k">echo</span> <span class="s2">&#34;Server received data: </span><span class="si">{</span>$data<span class="si">}</span><span class="s2">&#34;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
     <span class="p">}</span>
+
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>此时我们再看下运行结果</p>
+</div><p>此时我们再看下运行结果</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -552,8 +555,7 @@
 <span class="p">]);</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>onReceive的回调，我们不需要自行拆包</p>
+</div><p>onReceive的回调，我们不需要自行拆包</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -570,8 +572,7 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>client的测试代码使用\r\n（同server端package_eof标记一致），我们看下运行效果</p>
+</div><p>client的测试代码使用\r\n（同server端package_eof标记一致），我们看下运行效果</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -581,7 +582,7 @@
         alt="/images/af126fe46e-server-eof-split.png"
         title="img" /></p>
 <p>EOF标记解决粘包就说这么多，下面我们再看看另一种解决方案</p>
-<h3 id="固定包头包体协议">固定包头+包体协议</h3>
+<h4 id="固定包头包体协议">固定包头+包体协议</h4>
 <p>固定包头是一种非常通用的协议，它的含义就是在你要发送的数据包的前面，添加一段信息，这段信息了包含了你要发送的数据包的长度，长度一般是2个或者4个字节的整数。</p>
 <p>在这种协议下，我们的数据包的组成就是包头+包体。其中包头就是包体长度的二进制形式。比如我们本来想向服务端发送一段数据 &ldquo;Just a test.&rdquo; 共12个字符，现在我们要发送的数据就应该是这样的</p>
 <div class="highlight"><div class="chroma">
@@ -594,8 +595,7 @@
 <span class="nx">pack</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="nx">strlen</span><span class="p">(</span><span class="s2">&#34;Just a test.&#34;</span><span class="p">))</span> <span class="o">.</span> <span class="s2">&#34;Just a test.&#34;</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>其中php的pack函数是把数据打包成二进制字符串。</p>
+</div><p>其中php的pack函数是把数据打包成二进制字符串。</p>
 <p>为什么这样就能保证Worker进程收到的是一个完整的数据包呢？我来解释一下：</p>
 <p>当server收到一个数据包（可能是多个完整的数据包）之后，会先解出包头指定的数据长度，然后按照这个长度取出后面的数据，如果一次性收到多个数据包，依次循环，如此就能保证Worker进程可以一次性收到一个完整的数据包。</p>
 <p>我们以案例来分析</p>
@@ -642,6 +642,7 @@
 </span><span class="lnt">38
 </span><span class="lnt">39
 </span><span class="lnt">40
+</span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
@@ -680,14 +681,14 @@
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_serv</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
     <span class="p">}</span>
+
 <span class="p">}</span>
 
 <span class="nv">$reload</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerPack</span><span class="p">;</span>
 <span class="nv">$reload</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>客户端的代码</p>
+</div><p>客户端的代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -720,8 +721,7 @@
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>运行的结果</p>
+</div><p>运行的结果</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -754,8 +754,7 @@
 <span class="k">echo</span> <span class="s2">&#34;server received data: </span><span class="si">{</span>$body<span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-</div><div class="post-footer" id="post-footer">
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

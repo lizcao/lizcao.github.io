@@ -1,6 +1,6 @@
 # php多进程
 
-{{< highlight php  >}}
+```php
 <?php
 $pid = pcntl_fork();
 //父进程和子进程都会执行下面代码
@@ -13,17 +13,15 @@ if ($pid == -1) {
 } else {
          //子进程得到的$pid为0, 所以这里是子进程执行的逻辑。
 }
-
-{{< / highlight >}}
+```
 
 如果一个任务被分解成多个进程执行，就会减少整体的耗时。
 比如有一个比较大的数据文件要处理，这个文件由很多行组成。如果单进程执行要处理的任务，量很大时要耗时比较久。这时可以考虑多进程。
 
 有一个1000万个元素的int数组，需要求和，平均分到4个进程处理，每个进程处理一部分，再将结果统计出来，代码如下
 
-{{< highlight php >}}
-
-  <?php
+```php
+<?php
 
   $arrint = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];//假设很多
   $arrint = array_chunk($arrint,4,TRUE);
@@ -48,13 +46,12 @@ if ($pid == -1) {
       	$status = pcntl_wexitstatus($status);
       	echo "Child $status completed\n";
   }
-{{< / highlight >}}
+```
 
 上诉答案中，是把数组分为4个子数组分别用4个子进程去处理了，但是没有办法把所计算的结果相加，因为进程都是独立完成任务的，没有办法共享同一个（内存）变量，下面将引进消息队列来解决进程通信的问题
 
-{{< highlight php >}}
-
-  <?php
+```php
+<?php
   $arrint = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];//假设很多
   $arrint = array_chunk($arrint,4,TRUE);//把数组分为4个
 
@@ -97,8 +94,7 @@ if ($pid == -1) {
   //所有子进程结束后，再取出最后在队列中的值，就是int数组的和
   msg_receive($msgQueue,MSG_TYPE,$msgType,1024,$sum);
   echo $sum;//输出120
-
-{{< / highlight >}}
+```
 
 
 

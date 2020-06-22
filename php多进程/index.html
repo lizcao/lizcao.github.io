@@ -20,7 +20,7 @@
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://example.com/php%E5%A4%9A%E8%BF%9B%E7%A8%8B/" /><link rel="prev" href="https://example.com/swoole%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B/" /><link rel="next" href="https://example.com/docker%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://example.com/php%E5%A4%9A%E8%BF%9B%E7%A8%8B/" /><link rel="prev" href="https://example.com/swoole%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B/" /><link rel="next" href="https://example.com/%E9%AB%98%E6%80%A7%E8%83%BDhttp%E6%9C%8D%E5%8A%A1%E5%99%A8/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -156,8 +156,7 @@
 </span><span class="c1"></span><span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>如果一个任务被分解成多个进程执行，就会减少整体的耗时。
+</div><p>如果一个任务被分解成多个进程执行，就会减少整体的耗时。
 比如有一个比较大的数据文件要处理，这个文件由很多行组成。如果单进程执行要处理的任务，量很大时要耗时比较久。这时可以考虑多进程。</p>
 <p>有一个1000万个元素的int数组，需要求和，平均分到4个进程处理，每个进程处理一部分，再将结果统计出来，代码如下</p>
 <div class="highlight"><div class="chroma">
@@ -189,7 +188,7 @@
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
   <span class="nv">$arrint</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">];</span><span class="c1">//假设很多
 </span><span class="c1"></span>  <span class="nv">$arrint</span> <span class="o">=</span> <span class="nx">array_chunk</span><span class="p">(</span><span class="nv">$arrint</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">TRUE</span><span class="p">);</span>
@@ -216,8 +215,7 @@
   <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>上诉答案中，是把数组分为4个子数组分别用4个子进程去处理了，但是没有办法把所计算的结果相加，因为进程都是独立完成任务的，没有办法共享同一个（内存）变量，下面将引进消息队列来解决进程通信的问题</p>
+</div><p>上诉答案中，是把数组分为4个子数组分别用4个子进程去处理了，但是没有办法把所计算的结果相加，因为进程都是独立完成任务的，没有办法共享同一个（内存）变量，下面将引进消息队列来解决进程通信的问题</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -265,7 +263,7 @@
 </span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
   <span class="nv">$arrint</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">];</span><span class="c1">//假设很多
 </span><span class="c1"></span>  <span class="nv">$arrint</span> <span class="o">=</span> <span class="nx">array_chunk</span><span class="p">(</span><span class="nv">$arrint</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">TRUE</span><span class="p">);</span><span class="c1">//把数组分为4个
 </span><span class="c1"></span>
@@ -310,8 +308,7 @@
   <span class="k">echo</span> <span class="nv">$sum</span><span class="p">;</span><span class="c1">//输出120
 </span></code></pre></td></tr></table>
 </div>
-</div>
-</div><div class="post-footer" id="post-footer">
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -337,7 +334,7 @@
     </div>
 
     <div class="post-nav"><a href="/swoole%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B/" class="prev" rel="prev" title="swoole进程模型"><i class="fas fa-angle-left fa-fw"></i>swoole进程模型</a>
-            <a href="/docker%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="next" rel="next" title="docker创建镜像有两种方式">docker创建镜像有两种方式<i class="fas fa-angle-right fa-fw"></i></a></div>
+            <a href="/%E9%AB%98%E6%80%A7%E8%83%BDhttp%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="next" rel="next" title="高性能http服务器">高性能http服务器<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

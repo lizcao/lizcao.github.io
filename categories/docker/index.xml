@@ -5,10 +5,17 @@
         <description>docker - 分类 - LoveIt</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 20 Jun 2020 00:37:10 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/docker/" rel="self" type="application/rss+xml" /><item>
     <title>docker创建镜像有两种方式</title>
-    <link>https://example.com/docker%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
+    <link>https://example.com/%E5%88%B6%E4%BD%9Cdocker%E9%95%9C%E5%83%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
     <pubDate>Sat, 20 Jun 2020 00:37:10 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://example.com/docker%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
-    <description><![CDATA[docker创建镜像有两种方式 dockerfile方式 创建dockerfile 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31]]></description>
+    <guid>https://example.com/%E5%88%B6%E4%BD%9Cdocker%E9%95%9C%E5%83%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
+    <description><![CDATA[docker创建镜像有两种方式 1、dockerfile方式创建 创建dockerfile 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27]]></description>
+</item><item>
+    <title>什么是docker-composer</title>
+    <link>https://example.com/docker-composer/</link>
+    <pubDate>Sat, 20 Jun 2020 00:37:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/docker-composer/</guid>
+    <description><![CDATA[什么是docker-composer docker-composer是docker推出的，实现多容器编排的工具 相对传统的好处 传统的方式，都是我]]></description>
 </item></channel>
 </rss>

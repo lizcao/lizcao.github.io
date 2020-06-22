@@ -41,7 +41,7 @@ master进程只有一个，负责监听端口，接收来自服务器的请求�
 
 ### PHP-FPM配置文件
 
-```
+```nginx
 pid = run/php-fpm.pid
 #pid设置，默认在安装目录中的var/run/php-fpm.pid，建议开启
  
